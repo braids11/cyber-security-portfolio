@@ -53,3 +53,12 @@ $IPs = "10.0.0.10","10.0.0.11","10.0.0.12"
 foreach ($ip in $IPs) {
   net use \\$ip\C$ /user:labuser1 Password123
 }
+
+### CAPTURING TELEMETERY ###
+
+KALI - tshark -i eth0 -w smb_sessions_car-2013-09-003.pcap
+WIRESHARK FILTER - tcp.port == 445 && (smb.cmd == 0x73 || smb2.cmd == 1)
+
+
+
+
