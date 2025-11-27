@@ -1,25 +1,3 @@
----
-title: "Mike Brady – Detection Engineering Portfolio"
----
-
-# 👋 About Me
-
-Hi, I’m Mike Brady — a Cyber Security professional specializing in:
-
-- Detection Engineering  
-- MITRE ATT&CK & CAR Analytics
-- Hands-on Security Operations  
-
-### 📬 Contact
-- **Email:** mbrady86@outlook.com 
-- **LinkedIn:** [Your Name](https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG)  
-- **GitHub:** [yourusername](https://github.com/yourusername)  
-
-### 👤 Profile Picture  
-<img src="../assets/profile.jpg" alt="Profile picture" width="150" style="border-radius:50%;">
-
----
-
 # Detection Engineering Portfolio
 
 Welcome! This site showcases my hands-on work in:
