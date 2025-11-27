@@ -8,7 +8,7 @@ Hi, I’m Mike Brady — a Cyber Security professional specializing in:
 - MITRE ATT&CK & CAR Analytics
 - Hands-on Security Operations  
 
-### 📬 Contact  
+### Contact
 - **Email:** mbrady86@outlook.com 
 - **LinkedIn:** [Your Name](https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG)  
 - **GitHub:** [yourusername](https://github.com/yourusername)  
