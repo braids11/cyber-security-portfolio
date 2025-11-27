@@ -1,5 +1,3 @@
----
-
 # 👋 About Me
 
 Hi, I’m Mike Brady — a Cyber Security professional specializing in:
