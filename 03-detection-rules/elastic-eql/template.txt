@@ -1,0 +1,6 @@
+// <Descriptive Detection Name>
+// ATT&CK: <Technique ID> | CAR: <CAR ID>
+
+sequence by host.id, user.name
+  [network where destination.port == 445 and network.transport == "tcp"]
+  [network where destination.port == 445 and network.transport == "tcp"]
