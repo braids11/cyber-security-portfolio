@@ -1,13 +1,16 @@
 # Windows 11 Data Components Configuration
 
-## 1. Collected Log Sources Overview
+## 1. Data Component Overview
 
 - Sysmon
 - Windows Advanced Logging
+- ELK Stack
+- PowerShell Logging
+
 
 ---
 
-## 2. Data Components
+## 2. Data Components Installation & Configuration
 
 ### 2.1 Sysmon Configuration
 
@@ -15,7 +18,10 @@
 sudo .\sysmon64.exe -i .\sysmonconfig-export.xml
 ```
 
-### 2.2 Windows Advanced Loggin
+### 2.2 Windows Advanced Logging
+
+
+
 
 
 
