@@ -3,7 +3,7 @@
 Welcome! This site showcases my hands-on work in:
 
 - MITRE ATT&CK–based attack simulations  
-- MITRE CAR analytics implementation  
+- MITRE Detection Strategies implementation  
 - Detection engineering (rules, queries, scripts)  
 - Telemetry analysis (Sysmon, Windows Event Logs, Zeek, pcaps)
 
@@ -23,35 +23,27 @@ I run a home detection lab on:
   - Kali Linux (attacker)  
   - Windows 10 (endpoint)  
   - Windows Server (SMB/file server; optional DC)  
-  - Optional: Zeek sensor / Elastic SIEM
+  - Monitoring Tools: Zeek sensor / Elastic SIEM
 
 Details: see [`00-lab-architecture/`](../00-lab-architecture/).
 
 ---
 
-## 📘 MITRE CAR Analytics
+## 📘 MITRE Detection Strategies
 
-I’m using the MITRE Cyber Analytics Repository (CAR) as a series of “detection challenges.”
+I’m using the MITRE ATT&CK v18 Detection Strategies my primary index for my building my own detection logic.
 
 Each analytic includes:
 
-- Lab setup & attack reproduction  
-- Telemetry captures (pcaps, logs)  
+- Lab setup & ATT&CK Technique reproduction  
+- Telemetry captures (pcaps, logs)
 - Detection logic (Sigma, KQL, SPL, EQL, Zeek)  
-- Analysis, false positives, and tuning notes  
+- Analysis, false positives, and tuning notes
 
 Current work:
 
 - [CAR-2013-09-003 – SMB Session Setups](../01-car-analytics/CAR-2013-09-003-smb-session-setups/)
 - (More coming soon…)
-
----
-
-## 🧪 ATT&CK Technique Simulations
-
-Separate from CAR, I also simulate individual MITRE ATT&CK techniques and build detections:
-
-- [`02-attack-simulations/`](../02-attack-simulations/)
 
 ---
 
