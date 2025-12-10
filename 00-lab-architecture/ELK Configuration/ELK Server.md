@@ -72,4 +72,167 @@ sudo systemctl enable elasticsearch
 sudo systemctl start elasticsearch
 ```
 
+### 1.3 Install Logstash
+
+```bash
+sudo apt install logstash -y
+```
+
+Create the Beats input config:
+
+```bash
+sudo nano /etc/logstash/conf.d/02-beats-input.conf
+```
+
+```ruby
+input {
+  beats {
+    port => 5044
+  }
+}
+```
+
+Start Logstash:
+
+```bash
+sudo systemctl enable logstash
+sudo systemctl start logstash
+```
+
+### 1.4 Install Kibana
+
+```bash
+sudo apt install kibana -y
+```
+
+Edit config:
+
+```bash
+sudo nano /etc/kibana/kibana.yml
+```
+
+```yaml
+server.host: "0.0.0.0"
+```
+
+Start Kibana:
+
+```bash
+sudo systemctl enable kibana
+sudo systemctl start kibana
+```
+
+```bash
+sudo systemctl status elasticsearch
+sudo systemctl status logstash
+sudo systemctl status kibana
+```
+
+### 2 Install Filebeat on Ubuntu
+```bash
+sudo apt install filebeat -y
+```
+
+```bash
+sudo nano /etc/filebeat/modules.d/system.yml
+```
+
+Include:
+```ruby
+module: system
+  enabled: true
+
+  syslog:
+    enabled: true
+    # var.paths:
+    #   - /var/log/syslog
+```
+
+Enable system logs (optional):
+```bash
+sudo filebeat modules enable system
+sudo systemctl restart filebeat
+```
+
+## 3. Install Filebeat on Windows + Sysmon
+
+### 3.1 Install Filebeat
+
+1. Download Filebeat for Windows (ZIP): https://www.elastic.co/downloads/beats/filebeat
+2. Extract to: C:\Program Files\Filebeat
+
+---
+
+### 3.2 Configure filebeat.yml
+
+Edit: C:\Program Files\Elastic\Beats\9.2.2\filebeat\filebeat.yml
+
+see filebeat.yml
+
+---
+
+### 3.3 Install Filebeat as a Windows service
+
+```powershell
+cd "C:\Program Files\Filebeat"
+powershell -ExecutionPolicy Bypass -File .\install-service-filebeat.ps1
+Start-Service filebeat
+```
+
+Verify:
+
+```powershell
+Get-Service filebeat
+```
+
+---
+
+## 4. Verify Logs in Kibana
+
+Visit:
+
+http://<ELK_SERVER_IP>:5601
+
+Go to Discover, select:
+
+filebeat-*
+
+Sysmon filter:
+
+winlog.channel : "Microsoft-Windows-Sysmon/Operational"
+
+---
+
+## 5. Check Disk Usage
+
+curl -XGET "localhost:9200/_cat/indices?v&h=index,docs.count,store.size"
+
+sudo du -sh /var/lib/elasticsearch/
+sudo du -sh /var/lib/logstash/
+sudo du -sh /var/lib/filebeat/
+
+---
+
+## 6. Optional Tweaks
+
+Disable Ubuntu logs:
+
+sudo filebeat modules disable system
+sudo systemctl restart filebeat
+
+Add PowerShell logs:
+
+- type: winlog
+  name: Microsoft-Windows-PowerShell/Operational
+
+---
+
+## References
+
+https://www.linuxtechi.com/how-to-install-elk-stack-on-ubuntu/
+https://www.elastic.co/guide/en/beats/filebeat/index.html
+
+
+
+
 
