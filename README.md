@@ -1,5 +1,5 @@
 # detection-engineering-portfolio
-My MITRE ATT&amp;CK &amp; CAR analytics detection engineering portfolio.
+My MITRE ATT&amp;CK Detection Strategies Portfolio
 
 # Detection Engineering Portfolio  
 *A hands-on lab-driven exploration of MITRE ATT&CK and MITRE CAR analytics.*
